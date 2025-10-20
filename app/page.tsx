@@ -1,6 +1,7 @@
+import Cocktails from "@/components/Cocktails";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
+
 
 export default function Home() {
   
@@ -8,8 +9,7 @@ export default function Home() {
     <main className="">
       <Navbar />
       <Hero />
-
-      <div className="h-dvh bg-black" />
+      <Cocktails />
     </main>
   );
 }
