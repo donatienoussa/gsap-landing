@@ -43,7 +43,7 @@ function Art() {
     return (
         <div id="art">
             <div className='container mx-auto h-full pt-20'>
-                <h2 className='will-fade'>The Art</h2>
+                <h2 className='will-fade'>L'ART</h2>
 
                 <div className='content'>
                     <ul className='space-y-4 will-fade'>
@@ -74,12 +74,13 @@ function Art() {
                 </div>
 
                 <div className="masked-container">
-                    <h2 className='will-fade'>Sip-worthy Perfection</h2>
+                    <h2 className='will-fade'>Une perfection à savourer</h2>
 
                     <div className="masked-content">
-                        <h3>Made with Craft, Poured will Passion</h3>
+                        <h3>Préparé avec art, servi avec passion</h3>
                         <p>
-                            This isn’t just a drink. It’s a carefully crafted moment made just for you.
+                            Ce n’est pas qu’une simple boisson. C’est un moment soigneusement
+                            élaboré, créé spécialement pour vous.
                         </p>
                     </div>
                 </div>

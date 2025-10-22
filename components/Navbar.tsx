@@ -1,6 +1,5 @@
 'use client';
 
-
 import { navLinks } from '@/constants'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -19,7 +18,7 @@ const Navbar = () => {
         navTween.fromTo('nav',
             { backgroundColor: 'transparent' },
             { 
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: '#00000050',
                 backgroundFilter: 'blur(10px)',
                 duration: 1, 
                 ease: 'power1.inOut'
@@ -34,15 +33,15 @@ const Navbar = () => {
                     <img src="/images/logo.png" alt="Logo" width={32} height={32} />
                     <p>Velvet Pour</p>
                 </a>
-            </div>
 
-            <ul>
-                {navLinks.map((link) => (
-                    <li key={`#${link.id}`}>
-                        {link.title}
-                    </li>
-                ))}
-            </ul>
+                <ul>
+                    {navLinks.map((link) => (
+                        <li key={link.id}>
+                            <a href={`#${link.id}`}>{link.title}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </nav>
     )
 }

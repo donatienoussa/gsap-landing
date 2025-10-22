@@ -10,18 +10,20 @@ import { useMediaQuery } from 'react-responsive';
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-    
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const isMobile = useMediaQuery({ maxWidth: 767 });
 
     useGSAP(() => {
-        // Split text
-        const heroSplit = new SplitText('.title', { type: 'chars, words' });
-        const paragraphSplit = new SplitText('.subtitle', { type: 'lines' });
+        const heroSplit = new SplitText('.title', {
+            type: 'chars, words',
+        });
+
+        const paragraphSplit = new SplitText('.subtitle', {
+            type: 'lines',
+        });
 
         heroSplit.chars.forEach((char) => char.classList.add('text-gradient'));
 
-        // Animation texte
         gsap.from(heroSplit.chars, {
             yPercent: 100,
             duration: 1.8,
@@ -38,84 +40,99 @@ const Hero = () => {
             delay: 1,
         });
 
-        // Animation feuilles
         gsap.timeline({
             scrollTrigger: {
                 trigger: '#hero',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true
-            }
+                scrub: true,
+            },
         })
             .to('.right-leaf', { y: 200 }, 0)
-            .to('.left-leaf', { y: -200 }, 0);
-
-        // Vidéo synchronisée au scroll
-        if (videoRef.current) {
-            const video = videoRef.current;
-            const duration = video.duration || 10; // fallback si vidéo non chargée
-            video.currentTime = 0;
-
-            ScrollTrigger.create({
-                trigger: '#hero',
-                start: isMobile ? 'top 50%' : 'center 60%',
-                end: isMobile ? '120% top' : 'bottom top',
-                scrub: true,
-                onUpdate: (self) => {
-                    if (video.readyState >= 2) { // assure que la vidéo est chargée
-                        video.currentTime = self.progress * video.duration;
-                    }
-                }
-            });
-        }
+            .to('.left-leaf', { y: -200 }, 0)
+            .to('.arrow', { y: 100 }, 0);
     }, []);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const startValue = isMobile ? 'top 50%' : 'center 60%';
+        const endValue = isMobile ? '120% top' : 'bottom top';
+
+        const onLoaded = () => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: video,
+                    start: startValue,
+                    end: endValue,
+                    scrub: true,
+                    pin: true,
+                },
+            }).to(video, {
+                currentTime: video.duration,
+                ease: 'none',
+            });
+        };
+
+        if (video.readyState >= 1) {
+            onLoaded();
+        } else {
+            video.onloadedmetadata = onLoaded;
+        }
+
+        return () => {
+            video.onloadedmetadata = null;
+        };
+    }, [isMobile]);
 
     return (
         <>
-            <section id="hero" className='noisy'>
-                <h1 className='title'>MOJITO</h1>
+            <section id="hero" className="noisy">
+                <h1 className="title">VINTAGE</h1>
 
                 <img
                     src="/images/hero-left-leaf.png"
-                    alt="left-leaf"
-                    className='left-leaf'
+                    alt="feuille-gauche"
+                    className="left-leaf"
                 />
 
                 <img
                     src="/images/hero-right-leaf.png"
-                    alt="right-leaf"
-                    className='right-leaf'
+                    alt="feuille-droite"
+                    className="right-leaf"
                 />
 
-                <div className='body'>
-                    <div className='content'>
-                        <div className='space-y-5 hidden md:block'>
-                            <p>Cool. Class. Classic.</p>
-                            <p className='subtitle'>Sip the Spirit of <br /> Summer</p>
+                <div className="body">
+                    <div className="content">
+                        <div className="space-y-5 hidden md:block">
+                            <p className="text-xl font-bold">Cool. Classe. Authentique.</p>
+                            <p className="subtitle">Savourez nos <br /> boissons</p>
                         </div>
 
-                        <div className='view-cocktails'>
-                            <p className='subtitle'>
-                                Every cocktail we serve is a reflection of our obsession with detail — from the first muddle to the final garnish. That care is what turns a simple drink into something truly memorable.
+                        <div className="view-cocktails">
+                            <p className="subtitle">
+                                Chaque cocktail que nous servons reflète notre passion du détail — du premier mélange jusqu’à la dernière touche décorative.
+                                Ce soin transforme une simple boisson en une expérience inoubliable.
                             </p>
 
-                            <a href='#cocktails'>View Cocktails</a>
+                            <a href="#cocktails">Découvrir nos cocktails</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <div className='video absolute inset-0'>
+            <div className="video absolute inset-0">
                 <video
                     ref={videoRef}
                     src="/videos/output.mp4"
                     muted
                     playsInline
-                    preload='auto'
+                    preload="auto"
                 />
             </div>
         </>
     );
-}
+};
 
 export default Hero;

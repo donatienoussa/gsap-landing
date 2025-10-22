@@ -1,76 +1,77 @@
 const navLinks = [
- {
-	id: "cocktails",
-	title: "Cocktails",
- },
- {
-	id: "about",
-	title: "About Us",
- },
- {
-	id: "work",
-	title: "The Art",
- },
- {
-	id: "contact",
-	title: "Contact",
- },
+  {
+    id: "cocktails",
+    title: "Cocktails",
+  },
+  {
+    id: "about",
+    title: "À propos",
+  },
+  {
+    id: "art",
+    title: "L'Art",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
 ];
 
-
 const cocktailLists = [
- {
-	name: "Chapel Hill Shiraz",
-	country: "AU",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Caten Malbee",
-	country: "AU",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Rhino Pale Ale",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Irish Guinness",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+	{
+		name: "Chapel Hill Shiraz",
+		country: "Australie",
+		detail: "Bouteille",
+		price: "6 500 FCFA",
+	},
+	{
+		name: "Caten Malbee",
+		country: "Argentine",
+		detail: "Bouteille",
+		price: "32 000 FCFA",
+	},
+	{
+		name: "Rhino Pale Ale",
+		country: "Canada",
+		detail: "750 ml",
+		price: "13 000 FCFA",
+	},
+	{
+		name: "Irish Guinness",
+		country: "Irlande",
+		detail: "600 ml",
+		price: "19 000 FCFA",
+	},
 ];
 
 const mockTailLists = [
- {
-	name: "Tropical Bloom",
-	country: "US",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Passionfruit Mint",
-	country: "US",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Citrus Glow",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Lavender Fizz",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+	{
+		name: "Éclosion Tropicale",
+		country: "États-Unis",
+		detail: "Bouteille",
+		price: "6 500 FCFA",
+	},
+	{
+		name: "Passion - Menthe",
+		country: "États-Unis",
+		detail: "Bouteille",
+		price: "32 000 FCFA",
+	},
+	{
+		name: "Éclat d’Agrumes",
+		country: "Canada",
+		detail: "750 ml",
+		price: "13 000 FCFA",
+	},
+	{
+		name: "Fleur de Lavande",
+		country: "Irlande",
+		detail: "600 ml",
+		price: "19 000 FCFA",
+	},
 ];
+
+
 
 const profileLists = [
  {
@@ -88,34 +89,35 @@ const profileLists = [
 ];
 
 const featureLists = [
- "Perfectly balanced blends",
- "Garnished to perfection",
- "Ice-cold every time",
- "Expertly shaken & stirred",
+	"Mélanges parfaitement équilibrés",
+	"Garnis à la perfection",
+	"Toujours servis bien frais",
+	"Agités et mélangés avec expertise",
 ];
 
 const goodLists = [
- "Handpicked ingredients",
- "Signature techniques",
- "Bartending artistry in action",
- "Freshly muddled flavors",
+	"Ingrédients soigneusement sélectionnés",
+	"Techniques signatures uniques",
+	"L’art du bartending en action",
+	"Saveurs fraîchement infusées",
 ];
 
 const storeInfo = {
- heading: "Where to Find Us",
- address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
- contact: {
-	phone: "(555) 987-6543",
-	email: "hello@jsmcocktail.com",
- },
+	heading: "Où nous trouver",
+	address: "456, Boulevard des Saveurs, Cotonou, Bénin",
+	contact: {
+		phone: "+229 61 23 45 67",
+		email: "contact@barleparadis.com",
+	},
 };
 
 const openingHours = [
- { day: "Mon–Thu", time: "11:00am – 12am" },
- { day: "Fri", time: "11:00am – 2am" },
- { day: "Sat", time: "9:00am – 2am" },
- { day: "Sun", time: "9:00am – 1am" },
+	{ day: "Lun–Jeu", time: "11h00 – 00h00" },
+	{ day: "Ven", time: "11h00 – 02h00" },
+	{ day: "Sam", time: "09h00 – 02h00" },
+	{ day: "Dim", time: "09h00 – 01h00" },
 ];
+
 
 const socials = [
  {
@@ -135,40 +137,42 @@ const socials = [
  },
 ];
 
+
 const allCocktails = [
- {
-	id: 1,
-	name: "Classic Mojito",
-	image: "/images/drink1.png",
-	title: "Simple Ingredients, Bold Flavor",
-	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
- },
- {
-	id: 2,
-	name: "Raspberry Mojito",
-	image: "/images/drink2.png",
-	title: "A Zesty Classic That Never Fails",
-	description:
-	 "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
- },
- {
-	id: 3,
-	name: "Violet Breeze",
-	image: "/images/drink3.png",
-	title: "Simple Ingredients, Bold Flavor",
-	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
- },
- {
-	id: 4,
-	name: "Curacao Mojito",
-	image: "/images/drink4.png",
-	title: "Crafted With Care, Poured With Love",
-	description:
-	 "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
- },
+	{
+		id: 1,
+		name: "Mojito Classique",
+		image: "/images/drink1.png",
+		title: "Ingrédients simples, saveur audacieuse",
+		description:
+			"Préparée avec de la tequila, du jus de citron vert et de la liqueur d’orange, la Margarita est facile à réaliser et pleine de caractère. Ajoute un bord salé pour la boisson parfaite lors des soirées d’été.",
+	},
+	{
+		id: 2,
+		name: "Mojito à la Framboise",
+		image: "/images/drink2.png",
+		title: "Un classique acidulé qui ne déçoit jamais",
+		description:
+			"La Margarita est un grand classique qui équilibre le citron vert acidulé, la tequila douce et une touche de sucre. Secouée, glacée ou sur glace — elle reste toujours fraîche et désaltérante.",
+	},
+	{
+		id: 3,
+		name: "Brise Violette",
+		image: "/images/drink3.png",
+		title: "Ingrédients simples, saveur audacieuse",
+		description:
+			"Préparée avec de la tequila, du jus de citron vert et de la liqueur d’orange, la Margarita est facile à réaliser et pleine de caractère. Ajoute un bord salé pour la boisson parfaite lors des soirées d’été.",
+	},
+	{
+		id: 4,
+		name: "Mojito Curaçao",
+		image: "/images/drink4.png",
+		title: "Préparé avec soin, servi avec amour",
+		description:
+			"Chaque cocktail est préparé avec des ingrédients frais et une passion pour la perfection de chaque gorgée, que ce soit pour une célébration ou un simple moment de détente.",
+	},
 ];
+
 
 export {
  navLinks,
