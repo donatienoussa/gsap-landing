@@ -1,6 +1,8 @@
 "use client"
 
 import { allCocktails, cocktailLists } from '@/constants'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import React, { useRef, useState } from 'react'
 
 const Menu = () => {
@@ -8,6 +10,16 @@ const Menu = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const totalCocktails = allCocktails.length;
     const contentRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        gsap.fromTo("#title", { opacity: 0 }, { opacity: 1, duration: 1 })
+        gsap.fromTo(".cocktail img", { opacity: 0, xPercent: -100 },
+            { opacity: 1, xPercent: 0, duration: 1, ease: "power1.inOut" })
+        gsap.fromTo(".details h2", { opacity: 0, yPercent: 100 },
+            { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" })
+        gsap.fromTo(".details p", { opacity: 0, yPercent: 100 },
+            { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" })
+    }, [currentIndex])
 
     const gotoSlide = (index: number) => () => {
         const newIndex = (index + totalCocktails) % totalCocktails;
