@@ -4,6 +4,7 @@ import { cocktailLists, mockTailLists } from '@/constants'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Image from 'next/image'
 import React, { useRef } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -51,17 +52,21 @@ const Cocktails = () => {
             className="noisy relative overflow-hidden py-20"
         >
             {/* Feuilles positionnées */}
-            <img
+            <Image
                 src="/images/cocktail-left-leaf.png"
                 alt="feuille gauche"
                 id="c-left-leaf"
                 className="absolute top-0 left-0 w-32 md:w-48 z-10"
+                width={128}
+                height={128}
             />
-            <img
+            <Image
                 src="/images/cocktail-right-leaf.png"
                 alt="feuille droite"
                 id="c-right-leaf"
                 className="absolute top-0 right-0 w-32 md:w-48 z-10"
+                width={128}
+                height={128}
             />
 
             <div className="list relative z-20">

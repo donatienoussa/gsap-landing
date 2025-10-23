@@ -6,6 +6,7 @@ import { SplitText } from 'gsap/all';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useMediaQuery } from 'react-responsive';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,16 +92,20 @@ const Hero = () => {
             <section id="hero" className="noisy">
                 <h1 className="title">VINTAGE</h1>
 
-                <img
+                <Image
                     src="/images/hero-left-leaf.png"
                     alt="feuille-gauche"
                     className="left-leaf"
+                    width={128}
+                    height={128}
                 />
 
-                <img
+                <Image
                     src="/images/hero-right-leaf.png"
                     alt="feuille-droite"
                     className="right-leaf"
+                    width={128}
+                    height={128}
                 />
 
                 <div className="body">

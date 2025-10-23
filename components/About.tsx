@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import React from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -73,30 +74,30 @@ const About = () => {
 
             <div className="top-grid">
                 <div className="md:col-span-3">
-                    <div className="noisy" />
-                    <img src="/images/abt1.png" alt="grid-img-1" />
+                    <div className="noisy z-5" />
+                    <Image src="/images/abt1.png" alt="grid-img-1" fill />
                 </div>
 
                 <div className="md:col-span-6">
-                    <div className="noisy" />
-                    <img src="/images/abt2.png" alt="grid-img-2" />
+                    <div className="noisy z-5" />
+                    <Image src="/images/abt2.png" alt="grid-img-2" fill />
                 </div>
 
                 <div className="md:col-span-3">
-                    <div className="noisy" />
-                    <img src="/images/abt5.png" alt="grid-img-5" />
+                    <div className="noisy z-5" />
+                    <Image src="/images/abt5.png" alt="grid-img-5" fill />
                 </div>
             </div>
 
             <div className="bottom-grid">
                 <div className="md:col-span-8">
-                    <div className="noisy" />
-                    <img src="/images/abt3.png" alt="grid-img-3" />
+                    <div className="noisy z-5" />
+                    <Image src="/images/abt3.png" alt="grid-img-3" fill />
                 </div>
 
                 <div className="md:col-span-4">
-                    <div className="noisy" />
-                    <img src="/images/abt4.png" alt="grid-img-4" />
+                    <div className="noisy z-5" />
+                    <Image src="/images/abt4.png" alt="grid-img-4" fill />
                 </div>
             </div>
         </div>

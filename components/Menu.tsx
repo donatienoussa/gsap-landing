@@ -1,8 +1,9 @@
 "use client";
 
-import { allCocktails, cocktailLists } from "@/constants";
+import { allCocktails } from "@/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Image from "next/image";
 import React, { useRef, useState } from "react";
 
 const Menu = () => {
@@ -43,15 +44,19 @@ const Menu = () => {
 
     return (
         <section id="menu" className="px-15" aria-labelledby="menu-heading">
-            <img
+            <Image
                 src="/images/slider-left-leaf.png"
                 alt="feuille gauche"
                 id="m-left-leaf"
+                width={128}
+                height={128}
             />
-            <img
+            <Image
                 src="/images/slider-right-leaf.png"
                 alt="feuille droite"
                 id="m-right-leaf"
+                width={128}
+                height={128}
             />
 
             <h2 id="menu-heading" className="sr-only">
@@ -81,28 +86,34 @@ const Menu = () => {
                 <div className="arrows">
                     <button className="text-left" onClick={gotoSlide(currentIndex - 1)}>
                         <span>{prevCocktail.name}</span>
-                        <img
+                        <Image
                             src="/images/right-arrow.png"
                             alt="flèche droite"
                             aria-hidden="true"
+                            width={24}
+                            height={24}
                         />
                     </button>
 
                     <button className="text-left" onClick={gotoSlide(currentIndex + 1)}>
                         <span>{nextCocktail.name}</span>
-                        <img
+                        <Image
                             src="/images/left-arrow.png"
                             alt="flèche gauche"
                             aria-hidden="true"
+                            width={24}
+                            height={24}
                         />
                     </button>
                 </div>
 
                 <div className="cocktail">
-                    <img
+                    <Image
                         src={currentCocktail.image}
                         className="object-contain"
                         alt={currentCocktail.name}
+                        width={400}
+                        height={400}
                     />
                 </div>
 
